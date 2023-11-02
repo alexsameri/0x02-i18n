@@ -26,6 +26,7 @@ class Config(object):
 
 # Instantiate the application object
 app = Flask(__name__)
+app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config.from_object(Config)
 
 # Wrap the application with Babel
@@ -40,7 +41,7 @@ users = {
 }
 
 
-def get_user(user_id) -> Union[Dict[str, Union[str, None]], None]:
+def get_user(id) -> Union[Dict[str, Union[str, None]], None]:
     """
     Validate user login details
     Args:
